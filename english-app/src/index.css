@@ -169,3 +169,50 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ---------- Modo oscuro ----------
+   Se activa añadiendo la clase "dark" al <body>. Sobrescribe las
+   utilidades de Tailwind ya usadas para no tener que tocar cada elemento. */
+body.dark {
+  background: #0f1320;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(88, 204, 2, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(28, 176, 246, 0.08), transparent 45%);
+}
+
+body.dark .bg-white {
+  background-color: #1b2233 !important;
+}
+body.dark .bg-gray-50 {
+  background-color: #232b3e !important;
+}
+body.dark .bg-gray-100 {
+  background-color: #2a3347 !important;
+}
+body.dark .bg-gray-200 {
+  background-color: #323c52 !important;
+}
+body.dark .border-gray-200 {
+  border-color: #3a4663 !important;
+}
+
+body.dark .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+body.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+body.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+body.dark .text-gray-500,
+body.dark .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Las opciones neutras (blancas/grises) usan una sombra 3D gris clara;
+   en modo oscuro la atenuamos sin tocar los botones de color. */
+body.dark .btn-3d.bg-white,
+body.dark .btn-3d.bg-gray-100 {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35) !important;
+}

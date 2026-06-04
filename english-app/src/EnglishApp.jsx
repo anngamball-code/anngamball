@@ -192,6 +192,183 @@ const UNITS = [
       },
     ],
   },
+  {
+    id: "family",
+    title: "Familia",
+    icon: "👨‍👩‍👧",
+    color: "#CE82FF",
+    colorDark: "#A568CC",
+    exercises: [
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «madre»?",
+        options: ["mother", "father", "sister", "brother"],
+        answer: "mother",
+      },
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «padre»?",
+        options: ["brother", "father", "uncle", "son"],
+        answer: "father",
+      },
+      {
+        type: "listen",
+        prompt: "Escucha y elige la traducción correcta",
+        audioText: "brother",
+        options: ["hermana", "primo", "hermano", "tío"],
+        answer: "hermano",
+      },
+      {
+        type: "fill",
+        prompt: "Completa la oración",
+        before: "She is my",
+        after: ".",
+        options: ["sister", "brother", "father", "uncle"],
+        answer: "sister",
+        translation: "Ella es mi hermana.",
+      },
+      {
+        type: "order",
+        prompt: "Ordena las palabras para formar la frase",
+        words: ["I", "love", "my", "family"],
+        translation: "Amo a mi familia",
+      },
+      {
+        type: "match",
+        prompt: "Empareja cada palabra con su traducción",
+        pairs: [
+          { en: "mother", es: "madre" },
+          { en: "father", es: "padre" },
+          { en: "sister", es: "hermana" },
+          { en: "brother", es: "hermano" },
+        ],
+      },
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «abuela»?",
+        options: ["grandmother", "grandfather", "aunt", "mother"],
+        answer: "grandmother",
+      },
+    ],
+  },
+  {
+    id: "food",
+    title: "Comida",
+    icon: "🍎",
+    color: "#FF9600",
+    colorDark: "#E08600",
+    exercises: [
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «manzana»?",
+        options: ["bread", "apple", "water", "milk"],
+        answer: "apple",
+      },
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «pan»?",
+        options: ["rice", "egg", "bread", "cheese"],
+        answer: "bread",
+      },
+      {
+        type: "listen",
+        prompt: "Escucha y elige la traducción correcta",
+        audioText: "water",
+        options: ["leche", "agua", "pan", "queso"],
+        answer: "agua",
+      },
+      {
+        type: "fill",
+        prompt: "Completa la oración",
+        before: "I drink",
+        after: "every day.",
+        options: ["water", "bread", "apple", "rice"],
+        answer: "water",
+        translation: "Bebo agua todos los días.",
+      },
+      {
+        type: "order",
+        prompt: "Ordena las palabras para formar la frase",
+        words: ["I", "like", "to", "eat", "fruit"],
+        translation: "Me gusta comer fruta",
+      },
+      {
+        type: "match",
+        prompt: "Empareja cada palabra con su traducción",
+        pairs: [
+          { en: "apple", es: "manzana" },
+          { en: "bread", es: "pan" },
+          { en: "milk", es: "leche" },
+          { en: "cheese", es: "queso" },
+        ],
+      },
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «arroz»?",
+        options: ["rice", "egg", "meat", "fish"],
+        answer: "rice",
+      },
+    ],
+  },
+  {
+    id: "verbs",
+    title: "Verbos",
+    icon: "🏃",
+    color: "#00CD9C",
+    colorDark: "#00A37D",
+    exercises: [
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «comer»?",
+        options: ["eat", "drink", "run", "sleep"],
+        answer: "eat",
+      },
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «correr»?",
+        options: ["walk", "run", "jump", "read"],
+        answer: "run",
+      },
+      {
+        type: "listen",
+        prompt: "Escucha y elige la traducción correcta",
+        audioText: "to read",
+        options: ["escribir", "leer", "hablar", "dormir"],
+        answer: "leer",
+      },
+      {
+        type: "fill",
+        prompt: "Completa la oración",
+        before: "I",
+        after: "to school every day.",
+        options: ["go", "goes", "going", "went"],
+        answer: "go",
+        translation: "Voy a la escuela todos los días.",
+      },
+      {
+        type: "order",
+        prompt: "Ordena las palabras para formar la frase",
+        words: ["She", "likes", "to", "sing"],
+        translation: "A ella le gusta cantar",
+      },
+      {
+        type: "match",
+        prompt: "Empareja cada verbo con su traducción",
+        pairs: [
+          { en: "eat", es: "comer" },
+          { en: "drink", es: "beber" },
+          { en: "sleep", es: "dormir" },
+          { en: "run", es: "correr" },
+        ],
+      },
+      {
+        type: "choice",
+        prompt: "¿Cómo se dice «escribir»?",
+        options: ["write", "read", "speak", "listen"],
+        answer: "write",
+      },
+    ],
+  },
 ];
 
 // Usuarios ficticios para la tabla de clasificación.
@@ -254,6 +431,66 @@ function speak(text) {
 function vibrate(ms) {
   if (typeof navigator !== "undefined" && navigator.vibrate) {
     navigator.vibrate(ms);
+  }
+}
+
+/* ------------------------- EFECTOS DE SONIDO ----------------------------- */
+// Sonidos sintetizados con la Web Audio API: no requieren archivos externos
+// y funcionan sin conexión. Un flag mutable a nivel de módulo permite
+// silenciarlos sin recrear callbacks de React.
+
+let soundEnabled = true;
+function setSoundEnabled(value) {
+  soundEnabled = value;
+}
+
+let audioCtx = null;
+function getAudioCtx() {
+  if (typeof window === "undefined") return null;
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return null;
+  if (!audioCtx) audioCtx = new AC();
+  return audioCtx;
+}
+
+// Reproduce un tono breve con una pequeña envolvente para que suene suave.
+function tone(ctx, freq, startAt, duration, type = "sine", peak = 0.15) {
+  const t0 = ctx.currentTime + startAt;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0.0001, t0);
+  gain.gain.exponentialRampToValueAtTime(peak, t0 + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.0001, t0 + duration);
+  osc.connect(gain).connect(ctx.destination);
+  osc.start(t0);
+  osc.stop(t0 + duration + 0.03);
+}
+
+function playSound(name) {
+  if (!soundEnabled) return;
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  try {
+    if (ctx.state === "suspended") ctx.resume();
+    if (name === "correct") {
+      tone(ctx, 660, 0, 0.12, "triangle");
+      tone(ctx, 880, 0.1, 0.18, "triangle");
+    } else if (name === "wrong") {
+      tone(ctx, 200, 0, 0.18, "sawtooth", 0.12);
+      tone(ctx, 150, 0.12, 0.22, "sawtooth", 0.12);
+    } else if (name === "complete") {
+      // Pequeño arpegio ascendente de celebración.
+      tone(ctx, 523, 0, 0.14, "triangle");
+      tone(ctx, 659, 0.13, 0.14, "triangle");
+      tone(ctx, 784, 0.26, 0.14, "triangle");
+      tone(ctx, 1047, 0.39, 0.3, "triangle");
+    } else if (name === "click") {
+      tone(ctx, 440, 0, 0.05, "square", 0.08);
+    }
+  } catch {
+    /* Silencioso si el audio no está disponible. */
   }
 }
 
@@ -559,6 +796,10 @@ function Home({
   hearts,
   streak,
   completed,
+  theme,
+  soundOn,
+  onToggleTheme,
+  onToggleSound,
   onStartUnit,
   onShowLeaderboard,
 }) {
@@ -575,6 +816,25 @@ function Home({
     <div className="animate-fade">
       {/* Cabecera con avatar y estadísticas */}
       <div className="bg-white rounded-3xl p-5 shadow-sm mb-5">
+        {/* Ajustes rápidos: sonido y tema */}
+        <div className="flex justify-end gap-2 mb-3">
+          <button
+            onClick={onToggleSound}
+            aria-label={soundOn ? "Silenciar sonido" : "Activar sonido"}
+            className="btn-3d w-10 h-10 rounded-full bg-gray-100 text-lg flex items-center justify-center"
+            style={{ boxShadow: "0 2px 0 #e5e7eb" }}
+          >
+            {soundOn ? "🔊" : "🔇"}
+          </button>
+          <button
+            onClick={onToggleTheme}
+            aria-label={theme === "dark" ? "Modo claro" : "Modo oscuro"}
+            className="btn-3d w-10 h-10 rounded-full bg-gray-100 text-lg flex items-center justify-center"
+            style={{ boxShadow: "0 2px 0 #e5e7eb" }}
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
+        </div>
         <div className="flex items-center gap-3">
           <div className="text-4xl bg-duo-green/10 rounded-2xl w-16 h-16 flex items-center justify-center">
             🦉
@@ -807,6 +1067,10 @@ export default function EnglishApp() {
   const [heartBreak, setHeartBreak] = useState(false);
   const [watchingAd, setWatchingAd] = useState(false);
 
+  // --- Preferencias (persistentes) ---
+  const [theme, setTheme] = useState("light"); // "light" | "dark"
+  const [soundOn, setSoundOn] = useState(true);
+
   const unit = UNITS[unitIndex];
   const exercise = unit?.exercises[exIndex];
   const totalEx = unit?.exercises.length || 0;
@@ -821,6 +1085,12 @@ export default function EnglishApp() {
         setXp(data.xp || 0);
         setStreak(data.streak || { count: 0, last: null });
         setCompleted(data.completed || {});
+        if (data.theme === "dark" || data.theme === "light") {
+          setTheme(data.theme);
+        }
+        if (typeof data.soundOn === "boolean") {
+          setSoundOn(data.soundOn);
+        }
       }
     } catch {
       /* Ignorar datos corruptos. */
@@ -834,12 +1104,22 @@ export default function EnglishApp() {
     try {
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ xp, streak, completed }),
+        JSON.stringify({ xp, streak, completed, theme, soundOn }),
       );
     } catch {
       /* Almacenamiento no disponible. */
     }
-  }, [xp, streak, completed, loaded]);
+  }, [xp, streak, completed, theme, soundOn, loaded]);
+
+  // Aplica el tema oscuro a <body> (los estilos viven en index.css).
+  useEffect(() => {
+    document.body.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
+  // Sincroniza el flag de sonido a nivel de módulo.
+  useEffect(() => {
+    setSoundEnabled(soundOn);
+  }, [soundOn]);
 
   // Preparar el estado del ejercicio cuando cambia (sobre todo "order").
   useEffect(() => {
@@ -884,6 +1164,7 @@ export default function EnglishApp() {
     }));
     updateStreak();
     setConfettiSeed((s) => s + 1);
+    playSound("complete");
     setScreen("done");
   }, [lessonMistakes, unit, updateStreak]);
 
@@ -916,6 +1197,7 @@ export default function EnglishApp() {
     setLessonGainedXp((g) => g + 10);
     setMessage(MOTIVATION[Math.floor(Math.random() * MOTIVATION.length)]);
     setConfettiSeed((s) => s + 1);
+    playSound("correct");
   }, []);
 
   const registerWrong = useCallback(() => {
@@ -925,6 +1207,7 @@ export default function EnglishApp() {
     setHearts((h) => Math.max(0, h - 1));
     setHeartBreak(true);
     vibrate([0, 60, 40, 60]);
+    playSound("wrong");
     setTimeout(() => setHeartBreak(false), 450);
   }, []);
 
@@ -1000,6 +1283,17 @@ export default function EnglishApp() {
             hearts={hearts}
             streak={streak.count}
             completed={completed}
+            theme={theme}
+            soundOn={soundOn}
+            onToggleTheme={() =>
+              setTheme((t) => (t === "dark" ? "light" : "dark"))
+            }
+            onToggleSound={() => {
+              setSoundOn((s) => {
+                if (!s) playSound("click"); // confirma al reactivar
+                return !s;
+              });
+            }}
             onStartUnit={startUnit}
             onShowLeaderboard={() => setScreen("leaderboard")}
           />
