@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { questions, getQuizQuestions } from "./data/questions";
 import { difficulties, getDifficulty } from "./data/difficulties";
+import { categories, getCategory } from "./data/categories";
 import StartScreen from "./components/StartScreen";
 import ProgressBar from "./components/ProgressBar";
 import Timer from "./components/Timer";
@@ -21,6 +22,7 @@ const QUESTIONS_PER_GAME = 10;
 function App() {
   const [gameState, setGameState] = useState(GAME_STATE.START);
   const [difficulty, setDifficulty] = useState(null);
+  const [category, setCategory] = useState(null);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -30,12 +32,18 @@ function App() {
   const currentQuestion = quizQuestions[currentIndex];
   const isLastQuestion = currentIndex === quizQuestions.length - 1;
 
-  // Inicia una partida con la dificultad elegida.
-  const startGame = (difficultyKey) => {
+  // Inicia una partida con la dificultad y categoría elegidas.
+  const startGame = (difficultyKey, categoryKey) => {
     const diff = getDifficulty(difficultyKey);
-    const selected = getQuizQuestions(difficultyKey, QUESTIONS_PER_GAME);
+    const cat = getCategory(categoryKey);
+    const selected = getQuizQuestions(
+      difficultyKey,
+      categoryKey,
+      QUESTIONS_PER_GAME,
+    );
 
     setDifficulty(diff);
+    setCategory(cat);
     setQuizQuestions(selected);
     setCurrentIndex(0);
     setSelectedIndex(null);
@@ -82,6 +90,7 @@ function App() {
       <main className="container">
         {gameState === GAME_STATE.START && (
           <StartScreen
+            categories={categories}
             difficulties={difficulties}
             questionsPerGame={QUESTIONS_PER_GAME}
             totalInBank={questions.length}
@@ -117,6 +126,7 @@ function App() {
             score={score}
             total={quizQuestions.length}
             difficulty={difficulty}
+            category={category}
             onRestart={backToStart}
           />
         )}

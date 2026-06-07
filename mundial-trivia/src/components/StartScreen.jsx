@@ -1,4 +1,15 @@
-function StartScreen({ difficulties, questionsPerGame, totalInBank, onStart }) {
+import { useState } from "react";
+
+function StartScreen({
+  categories,
+  difficulties,
+  questionsPerGame,
+  totalInBank,
+  onStart,
+}) {
+  // Categoría seleccionada (por defecto "Todas").
+  const [category, setCategory] = useState("all");
+
   return (
     <div className="card start-screen">
       <div className="start-icon" aria-hidden="true">
@@ -9,23 +20,33 @@ function StartScreen({ difficulties, questionsPerGame, totalInBank, onStart }) {
         🇺🇸 🇲🇽 🇨🇦
       </p>
       <p className="subtitle">
-        {totalInBank} preguntas sobre la Copa del Mundo. Elige un nivel y
-        responde {questionsPerGame} preguntas antes de que se acabe el tiempo.
+        {totalInBank} preguntas sobre la Copa del Mundo. Elige una categoría y
+        un nivel para jugar {questionsPerGame} preguntas contrarreloj.
       </p>
 
-      <ul className="rules">
-        <li>Cada pregunta tiene un temporizador. ¡No te duermas!</li>
-        <li>No puedes cambiar tu respuesta una vez seleccionada.</li>
-        <li>Si se acaba el tiempo, la pregunta cuenta como fallada.</li>
-      </ul>
+      {/* Paso 1: categoría */}
+      <h2 className="section-label">1. Elige una categoría</h2>
+      <div className="category-list">
+        {categories.map((cat) => (
+          <button
+            key={cat.key}
+            className={`category-chip${category === cat.key ? " category-chip-active" : ""}`}
+            onClick={() => setCategory(cat.key)}
+            aria-pressed={category === cat.key}
+          >
+            <span aria-hidden="true">{cat.emoji}</span> {cat.label}
+          </button>
+        ))}
+      </div>
 
-      <h2 className="section-label">Elige la dificultad</h2>
+      {/* Paso 2: dificultad (inicia la partida) */}
+      <h2 className="section-label">2. Elige la dificultad</h2>
       <div className="difficulty-list">
         {difficulties.map((diff) => (
           <button
             key={diff.key}
             className="difficulty-btn"
-            onClick={() => onStart(diff.key)}
+            onClick={() => onStart(diff.key, category)}
           >
             <span className="difficulty-emoji" aria-hidden="true">
               {diff.emoji}

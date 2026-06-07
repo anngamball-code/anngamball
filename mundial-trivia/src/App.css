@@ -472,3 +472,45 @@
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
+
+/* ---------- Selección de categoría (chips) ---------- */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.category-chip:hover {
+  border-color: var(--primary);
+}
+
+.category-chip:active {
+  transform: scale(0.96);
+}
+
+.category-chip-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}

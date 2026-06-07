@@ -1,4 +1,4 @@
-function Results({ score, total, difficulty, onRestart }) {
+function Results({ score, total, difficulty, category, onRestart }) {
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
 
   // Mensaje personalizado según el desempeño.
@@ -30,6 +30,12 @@ function Results({ score, total, difficulty, onRestart }) {
           <strong>
             {difficulty.emoji} {difficulty.label}
           </strong>
+          {category && category.key !== "all" && (
+            <>
+              {" · "}
+              {category.emoji} {category.label}
+            </>
+          )}
         </p>
       )}
 
