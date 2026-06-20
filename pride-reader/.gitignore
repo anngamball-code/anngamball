@@ -7,3 +7,10 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+
+# Electron (salida del empaquetado)
+/release/
+build/icon.png
+build/icon.ico
+build/icon.icns
