@@ -1,0 +1,8 @@
+{
+  "appId": "com.anngamball.mundialtrivia",
+  "appName": "Trivia del Mundial 2026",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#065f46"
+  }
+}

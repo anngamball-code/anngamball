@@ -1,0 +1,27 @@
+{
+  "name": "mundial-trivia",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cap:sync": "npm run build && cap sync",
+    "cap:add:android": "cap add android",
+    "cap:open:android": "cap open android",
+    "assets:generate": "capacitor-assets generate --android"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "^7.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.10",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/assets": "^3.0.0"
+  }
+}
