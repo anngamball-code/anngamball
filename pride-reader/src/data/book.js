@@ -527,6 +527,228 @@ export const book = {
         },
       ],
     },
+    {
+      id: 4,
+      title: "Chapter 4",
+      titleEs: "Capítulo 4",
+      paragraphs: [
+        {
+          en: "When Jane and Elizabeth were alone, the former, who had been cautious in her praise of Mr. Bingley before, expressed to her sister just how very much she admired him.",
+          es: "Cuando Jane y Elizabeth se quedaron solas, la primera, que antes había sido prudente al elogiar al señor Bingley, expresó a su hermana cuánto lo admiraba.",
+        },
+        {
+          en: "“He is just what a young man ought to be,” said she, “sensible, good-humoured, lively; and I never saw such happy manners!—so much ease, with such perfect good breeding!”",
+          es: "—Es justo lo que un joven debería ser —dijo—: sensato, alegre, animado; ¡y nunca vi modales tan agradables!, tanta naturalidad, con tan perfecta buena educación.",
+        },
+        {
+          en: "“He is also handsome,” replied Elizabeth, “which a young man ought likewise to be, if he possibly can. His character is thereby complete.”",
+          es: "—También es apuesto —respondió Elizabeth—, cosa que un joven igualmente debería ser, si le es posible. Así su carácter queda completo.",
+        },
+        {
+          en: "“I was very much flattered by his asking me to dance a second time. I did not expect such a compliment.”",
+          es: "—Me halagó mucho que me pidiera bailar una segunda vez. No esperaba semejante cumplido.",
+        },
+        {
+          en: "“Did not you? I did for you. But that is one great difference between us. Compliments always take you by surprise, and me never. What could be more natural than his asking you again? You were about five times as pretty as every other woman in the room.”",
+          es: "—¿No lo esperabas? Yo sí por ti. Pero esa es una gran diferencia entre nosotras. Los cumplidos siempre te toman por sorpresa, y a mí nunca. ¿Qué podría ser más natural que él te pidiera bailar otra vez? Eras unas cinco veces más bonita que cualquier otra mujer de la sala.",
+        },
+        {
+          en: "“Dear Lizzy!”",
+          es: "—¡Querida Lizzy!",
+        },
+        {
+          en: "“Oh! you are a great deal too apt, you know, to like people in general. You never see a fault in anybody. All the world are good and agreeable in your eyes.”",
+          es: "—¡Ay! Tienes demasiada tendencia, ya lo sabes, a que te guste la gente en general. Nunca ves un defecto en nadie. Todo el mundo es bueno y agradable a tus ojos.",
+        },
+        {
+          en: "“I would wish not to be hasty in censuring anyone; but I always speak what I think.”",
+          es: "—No quisiera ser precipitada al criticar a nadie; pero siempre digo lo que pienso.",
+        },
+        {
+          en: "“I know you do; and it is that which makes the wonder. With your good sense, to be so honestly blind to the follies and nonsense of others! And so you like this man’s sisters, too, do you? Their manners are not equal to his.”",
+          es: "—Sé que lo haces; y eso es lo asombroso. ¡Con tu buen juicio, ser tan honestamente ciega a las locuras y tonterías de los demás! ¿Así que también te gustan las hermanas de este hombre? Sus modales no igualan a los de él.",
+        },
+        {
+          en: "“Certainly not—at first. But they are very pleasing women when you converse with them. Miss Bingley is to live with her brother, and keep his house.”",
+          es: "—Al principio no, desde luego. Pero son mujeres muy agradables cuando conversas con ellas. La señorita Bingley va a vivir con su hermano y a llevarle la casa.",
+        },
+        {
+          en: "Elizabeth listened in silence, but was not convinced; their behaviour at the assembly had not been calculated to please in general; and she was very little disposed to approve them.",
+          es: "Elizabeth escuchó en silencio, pero no quedó convencida; su comportamiento en el baile no había sido pensado para agradar en general; y estaba muy poco dispuesta a aprobarlas.",
+        },
+        {
+          en: "They were in fact very fine ladies; not deficient in good humour when they were pleased, but proud and conceited. They had a fortune of twenty thousand pounds, and were in the habit of spending more than they ought, and of associating with people of rank.",
+          es: "Eran, en efecto, damas muy elegantes; no faltas de buen humor cuando estaban contentas, pero orgullosas y engreídas. Tenían una fortuna de veinte mil libras y la costumbre de gastar más de lo debido y de relacionarse con gente de rango.",
+        },
+        {
+          en: "Between Bingley and Darcy there was a very steady friendship, in spite of a great opposition of character. In understanding, Darcy was the superior. Bingley was by no means deficient, but Darcy was clever. He was at the same time haughty, reserved, and fastidious, and his manners, though well-bred, were not inviting.",
+          es: "Entre Bingley y Darcy había una amistad muy firme, a pesar de un gran contraste de carácter. En entendimiento, Darcy era superior. Bingley no era en absoluto deficiente, pero Darcy era inteligente. Era a la vez altanero, reservado y exigente, y sus modales, aunque correctos, no resultaban atractivos.",
+        },
+        {
+          en: "Bingley was sure of being liked wherever he appeared; Darcy was continually giving offence. Bingley had never met with more pleasant people or prettier girls in his life. Darcy, on the contrary, had seen a collection of people in whom there was little beauty and no fashion.",
+          es: "Bingley estaba seguro de caer bien dondequiera que apareciese; Darcy ofendía continuamente. Bingley jamás había conocido a gente más agradable ni a chicas más bonitas en su vida. Darcy, por el contrario, había visto a un grupo de personas en quienes había poca belleza y ninguna elegancia.",
+        },
+      ],
+      a1: [
+        {
+          en: "Jane and Elizabeth talk about the dance.",
+          es: "Jane y Elizabeth hablan del baile.",
+        },
+        {
+          en: "Jane likes Mr. Bingley very much.",
+          es: "A Jane le gusta mucho el señor Bingley.",
+        },
+        {
+          en: "“He is kind, happy, and handsome,” she says.",
+          es: "—Es amable, alegre y guapo —dice.",
+        },
+        {
+          en: "Elizabeth smiles. “And he likes you!” she says.",
+          es: "Elizabeth sonríe. —¡Y tú le gustas! —dice.",
+        },
+        {
+          en: "Jane is happy, but she is shy.",
+          es: "Jane está contenta, pero es tímida.",
+        },
+        {
+          en: "Jane also likes the sisters of Mr. Bingley.",
+          es: "A Jane también le gustan las hermanas del señor Bingley.",
+        },
+        {
+          en: "But Elizabeth is not sure about them.",
+          es: "Pero Elizabeth no está segura de ellas.",
+        },
+        {
+          en: "The sisters are rich and elegant, but they are proud.",
+          es: "Las hermanas son ricas y elegantes, pero son orgullosas.",
+        },
+        {
+          en: "Mr. Bingley and Mr. Darcy are good friends.",
+          es: "El señor Bingley y el señor Darcy son buenos amigos.",
+        },
+        {
+          en: "Bingley is friendly. Darcy is clever, but he is proud.",
+          es: "Bingley es amable. Darcy es listo, pero es orgulloso.",
+        },
+        {
+          en: "Bingley loves the dance. Darcy does not.",
+          es: "A Bingley le encanta el baile. A Darcy no.",
+        },
+      ],
+    },
+    {
+      id: 5,
+      title: "Chapter 5",
+      titleEs: "Capítulo 5",
+      paragraphs: [
+        {
+          en: "Within a short walk of Longbourn lived a family with whom the Bennets were particularly intimate. Sir William Lucas had been formerly in trade in Meryton, where he had made a tolerable fortune, and risen to the honour of knighthood by an address to the king during his mayoralty.",
+          es: "A poca distancia a pie de Longbourn vivía una familia con la que los Bennet tenían especial intimidad. Sir William Lucas había estado antes en el comercio en Meryton, donde había hecho una fortuna razonable y había ascendido al honor de la nobleza por un discurso al rey durante su alcaldía.",
+        },
+        {
+          en: "By nature inoffensive, friendly, and obliging, his presentation at St. James’s had made him courteous. Lady Lucas was a very good kind of woman, not too clever to be a valuable neighbour to Mrs. Bennet.",
+          es: "Inofensivo, amable y servicial por naturaleza, su presentación en la corte de St. James lo había vuelto cortés. Lady Lucas era una mujer muy buena, no demasiado lista como para no ser una vecina valiosa para la señora Bennet.",
+        },
+        {
+          en: "They had several children. The eldest of them, a sensible, intelligent young woman, about twenty-seven, was Elizabeth’s intimate friend. Her name was Charlotte.",
+          es: "Tenían varios hijos. La mayor de ellos, una joven sensata e inteligente, de unos veintisiete años, era la amiga íntima de Elizabeth. Se llamaba Charlotte.",
+        },
+        {
+          en: "That the Miss Lucases and the Miss Bennets should meet to talk over a ball was absolutely necessary; and the morning after the assembly brought the former to Longbourn to hear and to communicate.",
+          es: "Que las señoritas Lucas y las señoritas Bennet se reunieran para hablar de un baile era absolutamente necesario; y la mañana siguiente al baile llevó a las primeras a Longbourn para oír y contar.",
+        },
+        {
+          en: "“You began the evening well, Charlotte,” said Mrs. Bennet to Miss Lucas. “You were Mr. Bingley’s first choice.”",
+          es: "—Empezaste bien la velada, Charlotte —dijo la señora Bennet a la señorita Lucas—. Fuiste la primera elección del señor Bingley.",
+        },
+        {
+          en: "“Yes; but he seemed to like his second better.”",
+          es: "—Sí; pero pareció gustarle más la segunda.",
+        },
+        {
+          en: "“Oh! you mean Jane, I suppose, because he danced with her twice. To be sure that did seem as if he admired her.”",
+          es: "—¡Ah! Te refieres a Jane, supongo, porque bailó con ella dos veces. Desde luego eso parecía indicar que la admiraba.",
+        },
+        {
+          en: "“Mr. Darcy is not so well worth listening to as his friend, is he?” said Charlotte. “Poor Eliza!—to be only just tolerable.”",
+          es: "—El señor Darcy no merece tanto la pena escucharlo como su amigo, ¿verdad? —dijo Charlotte—. ¡Pobre Eliza!, ser solo «pasable».",
+        },
+        {
+          en: "“I beg you would not put it into Lizzy’s head to be vexed by his ill-treatment, for he is such a disagreeable man, that it would be quite a misfortune to be liked by him.”",
+          es: "—Te ruego que no le metas a Lizzy en la cabeza la idea de molestarse por su mal trato, pues es un hombre tan desagradable que sería toda una desgracia gustarle.",
+        },
+        {
+          en: "“His pride,” said Miss Lucas, “does not offend me so much as pride often does, because there is an excuse for it. One cannot wonder that so very fine a young man, with family, fortune, everything in his favour, should think highly of himself.”",
+          es: "—Su orgullo —dijo la señorita Lucas— no me ofende tanto como suele ofender el orgullo, porque hay una excusa para él. No es de extrañar que un joven tan distinguido, con familia, fortuna y todo a su favor, piense bien de sí mismo.",
+        },
+        {
+          en: "“That is very true,” replied Elizabeth, “and I could easily forgive his pride, if he had not mortified mine.”",
+          es: "—Es muy cierto —respondió Elizabeth—, y podría perdonar fácilmente su orgullo si él no hubiera herido el mío.",
+        },
+        {
+          en: "“Pride,” observed Mary, “is a very common failing, I believe. Vanity and pride are different things, though the words are often used synonymously. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.”",
+          es: "—El orgullo —observó Mary— es un defecto muy común, creo. La vanidad y el orgullo son cosas distintas, aunque las palabras se usen a menudo como sinónimos. El orgullo tiene que ver más con la opinión que tenemos de nosotros mismos; la vanidad, con lo que querríamos que los demás pensaran de nosotros.",
+        },
+        {
+          en: "“If I were as rich as Mr. Darcy,” cried a young Lucas, “I should not care how proud I was. I would keep a pack of foxhounds, and drink a bottle of wine a day.”",
+          es: "—Si yo fuera tan rico como el señor Darcy —exclamó un joven Lucas—, no me importaría lo orgulloso que fuera. Tendría una jauría de perros de caza y bebería una botella de vino al día.",
+        },
+        {
+          en: "“Then you would drink a great deal more than you ought,” said Mrs. Bennet; “and if I were to see you at it, I should take away your bottle directly.”",
+          es: "—Entonces beberías mucho más de lo debido —dijo la señora Bennet—; y si te viera haciéndolo, te quitaría la botella de inmediato.",
+        },
+      ],
+      a1: [
+        {
+          en: "The Lucas family lives near the Bennets.",
+          es: "La familia Lucas vive cerca de los Bennet.",
+        },
+        {
+          en: "Charlotte Lucas is Elizabeth's best friend.",
+          es: "Charlotte Lucas es la mejor amiga de Elizabeth.",
+        },
+        {
+          en: "The day after the dance, they talk about it.",
+          es: "El día después del baile, hablan de él.",
+        },
+        {
+          en: "Mr. Bingley danced with Jane two times.",
+          es: "El señor Bingley bailó con Jane dos veces.",
+        },
+        {
+          en: "He thinks Jane is the prettiest girl.",
+          es: "Él piensa que Jane es la chica más bonita.",
+        },
+        {
+          en: "Everybody talks about Mr. Darcy.",
+          es: "Todos hablan del señor Darcy.",
+        },
+        {
+          en: "They think he is very proud.",
+          es: "Piensan que es muy orgulloso.",
+        },
+        {
+          en: "“He is rich, so he can be proud,” says Charlotte.",
+          es: "—Es rico, así que puede ser orgulloso —dice Charlotte.",
+        },
+        {
+          en: "“I can forgive his pride, but he hurt my pride,” says Elizabeth.",
+          es: "—Puedo perdonar su orgullo, pero hirió el mío —dice Elizabeth.",
+        },
+        {
+          en: "Mary likes to think a lot. She talks about pride.",
+          es: "A Mary le gusta pensar mucho. Habla del orgullo.",
+        },
+        {
+          en: "“Pride and vanity are not the same,” she says.",
+          es: "—El orgullo y la vanidad no son lo mismo —dice.",
+        },
+        {
+          en: "The family talks all afternoon.",
+          es: "La familia habla toda la tarde.",
+        },
+      ],
+    },
   ],
 };
 
