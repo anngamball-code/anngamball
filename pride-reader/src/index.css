@@ -482,3 +482,46 @@ body {
     }
   }
 }
+
+/* ---------------- Selector de nivel ---------------- */
+.level-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 760px;
+  margin: 0.6rem auto 0;
+}
+
+.level-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+
+.level-toggle {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  padding: 0.2rem;
+}
+
+.level-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.level-active {
+  background: var(--gold);
+  color: #1a1a2e;
+}

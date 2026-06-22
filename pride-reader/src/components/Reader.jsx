@@ -6,7 +6,7 @@ import { tokenize } from "../utils/text";
 // - onTranslatePhrase(phrase, es): traduce una selección / párrafo.
 // - activePara / activeWordIndex: resaltado sincronizado en modo escucha.
 function Reader({
-  chapter,
+  paragraphs,
   activePara,
   activeWordIndex,
   onWordClick,
@@ -14,10 +14,10 @@ function Reader({
 }) {
   const containerRef = useRef(null);
 
-  // Tokeniza cada párrafo una sola vez por capítulo.
+  // Tokeniza cada párrafo una sola vez por lista de párrafos.
   const paragraphTokens = useMemo(
-    () => chapter.paragraphs.map((p) => tokenize(p.en)),
-    [chapter],
+    () => paragraphs.map((p) => tokenize(p.en)),
+    [paragraphs],
   );
 
   // Si el usuario selecciona texto, traducimos el párrafo que lo contiene.
@@ -34,7 +34,7 @@ function Reader({
     if (!el) return;
 
     const idx = Number(el.dataset.para);
-    const para = chapter.paragraphs[idx];
+    const para = paragraphs[idx];
     if (para) onTranslatePhrase(text, para.es);
   };
 
@@ -45,7 +45,7 @@ function Reader({
       onMouseUp={handleSelection}
       onTouchEnd={handleSelection}
     >
-      {chapter.paragraphs.map((para, pIdx) => (
+      {paragraphs.map((para, pIdx) => (
         <p
           key={pIdx}
           className={`para${activePara === pIdx ? " para-active" : ""}`}

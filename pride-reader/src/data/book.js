@@ -154,6 +154,56 @@ export const book = {
           es: "El señor Bennet era una mezcla tan singular de ingenio rápido, humor sarcástico, reserva y capricho, que la experiencia de veintitrés años había sido insuficiente para que su esposa comprendiera su carácter. La mente de ella era menos difícil de descifrar. Era una mujer de escaso entendimiento, poca información y temperamento variable. Cuando estaba descontenta, se creía nerviosa. El asunto de su vida era casar a sus hijas; su consuelo, las visitas y las noticias.",
         },
       ],
+      a1: [
+        {
+          en: "A rich man comes to live near the Bennet family.",
+          es: "Un hombre rico viene a vivir cerca de la familia Bennet.",
+        },
+        {
+          en: "His name is Mr. Bingley.",
+          es: "Se llama señor Bingley.",
+        },
+        {
+          en: "He is young. He is single. He has a lot of money.",
+          es: "Es joven. Es soltero. Tiene mucho dinero.",
+        },
+        {
+          en: "Mrs. Bennet is very happy about this news.",
+          es: "La señora Bennet está muy contenta con esta noticia.",
+        },
+        {
+          en: "She has five daughters.",
+          es: "Tiene cinco hijas.",
+        },
+        {
+          en: "She wants a daughter to marry the rich man.",
+          es: "Quiere que una hija se case con el hombre rico.",
+        },
+        {
+          en: "“Please go and visit Mr. Bingley,” she says to her husband.",
+          es: "—Por favor, ve a visitar al señor Bingley —le dice a su marido.",
+        },
+        {
+          en: "Mr. Bennet likes to make jokes.",
+          es: "Al señor Bennet le gusta hacer bromas.",
+        },
+        {
+          en: "He does not give her a clear answer.",
+          es: "No le da una respuesta clara.",
+        },
+        {
+          en: "Mrs. Bennet is angry.",
+          es: "La señora Bennet está enfadada.",
+        },
+        {
+          en: "“You do not care about my poor nerves!” she says.",
+          es: "—¡No te importan mis pobres nervios! —dice.",
+        },
+        {
+          en: "But Mr. Bennet only smiles. He knows his wife very well.",
+          es: "Pero el señor Bennet solo sonríe. Conoce muy bien a su esposa.",
+        },
+      ],
     },
     {
       id: 2,
@@ -269,6 +319,48 @@ export const book = {
           es: "El resto de la velada se pasó conjeturando cuán pronto devolvería él la visita al señor Bennet, y decidiendo cuándo lo invitarían a cenar.",
         },
       ],
+      a1: [
+        {
+          en: "Mr. Bennet visits Mr. Bingley.",
+          es: "El señor Bennet visita al señor Bingley.",
+        },
+        {
+          en: "But he does not tell his family.",
+          es: "Pero no se lo dice a su familia.",
+        },
+        {
+          en: "At home, the family talks about Mr. Bingley.",
+          es: "En casa, la familia habla del señor Bingley.",
+        },
+        {
+          en: "Mrs. Bennet is sad. She thinks they cannot meet him.",
+          es: "La señora Bennet está triste. Cree que no pueden conocerlo.",
+        },
+        {
+          en: "Then Mr. Bennet tells them a secret.",
+          es: "Entonces el señor Bennet les cuenta un secreto.",
+        },
+        {
+          en: "“I visited Mr. Bingley today,” he says.",
+          es: "—Hoy visité al señor Bingley —dice.",
+        },
+        {
+          en: "The girls are very surprised.",
+          es: "Las chicas están muy sorprendidas.",
+        },
+        {
+          en: "Mrs. Bennet is very happy now.",
+          es: "Ahora la señora Bennet está muy contenta.",
+        },
+        {
+          en: "“You are a good father!” she says.",
+          es: "—¡Eres un buen padre! —dice.",
+        },
+        {
+          en: "Now the family can meet Mr. Bingley.",
+          es: "Ahora la familia puede conocer al señor Bingley.",
+        },
+      ],
     },
     {
       id: 3,
@@ -378,6 +470,60 @@ export const book = {
         {
           en: "“But I can assure you,” she added, “that Lizzy does not lose much by not suiting his fancy; for he is a most disagreeable, horrid man, not at all worth pleasing. So high and so conceited, that there was no enduring him! He walked here, and he walked there, fancying himself so very great! Not handsome enough to dance with! I wish you had been there, my dear, to have given him one of your set-downs. I quite detest the man.”",
           es: "—Pero puedo asegurarte —añadió— que Lizzy no pierde gran cosa por no ser de su agrado; pues es un hombre de lo más desagradable y odioso, que no merece en absoluto que se le complazca. ¡Tan altanero y tan engreído que no había quien lo soportara! Iba de aquí para allá, ¡creyéndose tan importante! ¡No lo bastante guapa para bailar con ella! Ojalá hubieras estado allí, querido, para darle uno de tus cortes. Detesto por completo a ese hombre.",
+        },
+      ],
+      a1: [
+        {
+          en: "There is a big dance in the town.",
+          es: "Hay un gran baile en el pueblo.",
+        },
+        {
+          en: "Mr. Bingley comes to the dance.",
+          es: "El señor Bingley viene al baile.",
+        },
+        {
+          en: "He brings his two sisters and his friend.",
+          es: "Trae a sus dos hermanas y a su amigo.",
+        },
+        {
+          en: "His friend's name is Mr. Darcy.",
+          es: "Su amigo se llama señor Darcy.",
+        },
+        {
+          en: "Mr. Bingley is friendly and happy. He dances with many girls.",
+          es: "El señor Bingley es amable y alegre. Baila con muchas chicas.",
+        },
+        {
+          en: "He likes Jane, the oldest sister. She is beautiful.",
+          es: "Le gusta Jane, la hermana mayor. Es hermosa.",
+        },
+        {
+          en: "Mr. Darcy is rich, but he is proud.",
+          es: "El señor Darcy es rico, pero es orgulloso.",
+        },
+        {
+          en: "He does not want to dance.",
+          es: "No quiere bailar.",
+        },
+        {
+          en: "“Dance with Elizabeth!” says Mr. Bingley.",
+          es: "—¡Baila con Elizabeth! —dice el señor Bingley.",
+        },
+        {
+          en: "“She is not beautiful enough for me,” says Mr. Darcy.",
+          es: "—No es lo bastante hermosa para mí —dice el señor Darcy.",
+        },
+        {
+          en: "Elizabeth hears this. She does not like Mr. Darcy.",
+          es: "Elizabeth oye esto. El señor Darcy no le cae bien.",
+        },
+        {
+          en: "But she laughs about it with her friends.",
+          es: "Pero se ríe de ello con sus amigas.",
+        },
+        {
+          en: "Everybody thinks Mr. Darcy is proud and rude.",
+          es: "Todos piensan que el señor Darcy es orgulloso y grosero.",
         },
       ],
     },

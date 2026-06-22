@@ -22,6 +22,7 @@ const TOTAL = book.chapters.length;
 export default function App() {
   const [chapterIndex, setChapterIndex] = useState(0);
   const [mode, setMode] = useState("read"); // "read" | "listen"
+  const [level, setLevel] = useState("original"); // "original" | "a1"
   const [panel, setPanel] = useState(null);
   const [rate, setRateState] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -31,17 +32,24 @@ export default function App() {
 
   const supported = speechSupported();
   const chapter = book.chapters[chapterIndex];
+  // Párrafos del nivel activo (original o adaptación A1).
+  const paragraphs = level === "a1" ? chapter.a1 : chapter.paragraphs;
 
   // Refs para evitar closures obsoletos en la lectura por voz.
   const playingRef = useRef(false);
   const rateRef = useRef(1);
   const chapterIdxRef = useRef(0);
   const paraRef = useRef(0);
+  const levelRef = useRef("original");
   const genRef = useRef(0); // invalida callbacks "onEnd" de locuciones canceladas
 
   useEffect(() => {
     chapterIdxRef.current = chapterIndex;
   }, [chapterIndex]);
+
+  useEffect(() => {
+    levelRef.current = level;
+  }, [level]);
 
   // "Calienta" la lista de voces del navegador.
   useEffect(() => {
@@ -66,7 +74,8 @@ export default function App() {
   // Lee el párrafo i y, al terminar, continúa con el siguiente.
   const speakParagraph = (i) => {
     const ch = book.chapters[chapterIdxRef.current];
-    if (i >= ch.paragraphs.length) {
+    const paras = levelRef.current === "a1" ? ch.a1 : ch.paragraphs;
+    if (i >= paras.length) {
       stopListen();
       return;
     }
@@ -75,7 +84,7 @@ export default function App() {
     setActivePara(i);
     setActiveWordIndex(-1);
 
-    const text = ch.paragraphs[i].en;
+    const text = paras[i].en;
     const tokens = tokenize(text);
 
     cancelSpeech();
@@ -125,6 +134,13 @@ export default function App() {
     setMode(m);
   };
 
+  // Cambiar de nivel detiene la lectura y reinicia la posición.
+  const handleSetLevel = (l) => {
+    stopListen();
+    setPanel(null);
+    setLevel(l);
+  };
+
   const goChapter = (idx) => {
     if (idx < 0 || idx >= TOTAL) return;
     stopListen();
@@ -154,13 +170,15 @@ export default function App() {
         totalChapters={TOTAL}
         mode={mode}
         onSetMode={handleSetMode}
+        level={level}
+        onSetLevel={handleSetLevel}
         onPrev={() => goChapter(chapterIndex - 1)}
         onNext={() => goChapter(chapterIndex + 1)}
       />
 
       <main className={`content${mode === "listen" ? " content-listen" : ""}`}>
         <Reader
-          chapter={chapter}
+          paragraphs={paragraphs}
           activePara={mode === "listen" ? activePara : -1}
           activeWordIndex={mode === "listen" ? activeWordIndex : -1}
           onWordClick={handleWordClick}

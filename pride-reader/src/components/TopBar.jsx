@@ -5,6 +5,8 @@ function TopBar({
   totalChapters,
   mode,
   onSetMode,
+  level,
+  onSetLevel,
   onPrev,
   onNext,
 }) {
@@ -51,6 +53,28 @@ function TopBar({
         >
           ›
         </button>
+      </div>
+
+      <div className="level-row">
+        <span className="level-label">Nivel:</span>
+        <div
+          className="level-toggle"
+          role="group"
+          aria-label="Nivel de lectura"
+        >
+          <button
+            className={`level-btn${level === "original" ? " level-active" : ""}`}
+            onClick={() => onSetLevel("original")}
+          >
+            Original
+          </button>
+          <button
+            className={`level-btn${level === "a1" ? " level-active" : ""}`}
+            onClick={() => onSetLevel("a1")}
+          >
+            🌱 Fácil (A1)
+          </button>
+        </div>
       </div>
 
       <div className="progress-track" aria-hidden="true">
